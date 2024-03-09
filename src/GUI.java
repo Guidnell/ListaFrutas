@@ -57,6 +57,12 @@ public class GUI extends JFrame {
 		btnMango.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String c = JOptionPane.showInputDialog("¿Cuántos Mangos quiere?");
+				
+				try{
+					
+				}catch (NumberFormatException a){
+					JOptionPane.showMessageDialog(null, "Solo puede ingresar números.", "Error", JOptionPane.WARNING_MESSAGE);
+				}
 			}
 		});
 		btnMango.setBackground(new Color(255, 255, 128));
