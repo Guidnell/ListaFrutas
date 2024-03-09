@@ -51,14 +51,14 @@ public class GUI extends JFrame {
 		lblTitulo.setBounds(292, 11, 195, 36);
 		contentPane.add(lblTitulo);
 		
-		JButton btnNewButton = new JButton("Mango");
-		btnNewButton.addActionListener(new ActionListener() {
+		JButton btnMango = new JButton("Mango");
+		btnMango.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnNewButton.setBackground(new Color(255, 255, 128));
-		btnNewButton.setBounds(10, 47, 89, 48);
-		contentPane.add(btnNewButton);
+		btnMango.setBackground(new Color(255, 255, 128));
+		btnMango.setBounds(10, 47, 89, 48);
+		contentPane.add(btnMango);
 		
 		JButton btnSandia = new JButton("Sandia");
 		btnSandia.addActionListener(new ActionListener() {
@@ -137,28 +137,28 @@ public class GUI extends JFrame {
 		ListaFC.setBounds(348, 77, 208, 284);
 		contentPane.add(ListaFC);
 		
-		JButton btnNewButton_1 = new JButton("Eliminar Lista");
-		btnNewButton_1.addActionListener(new ActionListener() {
+		JButton btnEliminarL = new JButton("Eliminar Lista");
+		btnEliminarL.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnNewButton_1.setToolTipText("Dejara la lista en blanco.");
-		btnNewButton_1.setForeground(Color.RED);
-		btnNewButton_1.setFont(new Font("Tahoma", Font.PLAIN, 10));
-		btnNewButton_1.setBackground(new Color(255, 128, 128));
-		btnNewButton_1.setBounds(348, 378, 103, 23);
-		contentPane.add(btnNewButton_1);
+		btnEliminarL.setToolTipText("Dejara la lista en blanco.");
+		btnEliminarL.setForeground(Color.RED);
+		btnEliminarL.setFont(new Font("Tahoma", Font.PLAIN, 10));
+		btnEliminarL.setBackground(new Color(255, 128, 128));
+		btnEliminarL.setBounds(348, 378, 103, 23);
+		contentPane.add(btnEliminarL);
 		
-		JButton btnNewButton_1_1 = new JButton("Eliminar");
-		btnNewButton_1_1.addActionListener(new ActionListener() {
+		JButton btnEliminarE = new JButton("Eliminar");
+		btnEliminarE.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnNewButton_1_1.setToolTipText("Seleccione el elemento y le da click.");
-		btnNewButton_1_1.setFont(new Font("Tahoma", Font.PLAIN, 10));
-		btnNewButton_1_1.setBackground(new Color(255, 128, 128));
-		btnNewButton_1_1.setBounds(461, 378, 95, 23);
-		contentPane.add(btnNewButton_1_1);
+		btnEliminarE.setToolTipText("Seleccione el elemento y le da click.");
+		btnEliminarE.setFont(new Font("Tahoma", Font.PLAIN, 10));
+		btnEliminarE.setBackground(new Color(255, 128, 128));
+		btnEliminarE.setBounds(461, 378, 95, 23);
+		contentPane.add(btnEliminarE);
 		
 		JLabel lblFrutasC = new JLabel("Frutas compradas");
 		lblFrutasC.setHorizontalAlignment(SwingConstants.CENTER);
