@@ -9,6 +9,8 @@ import javax.swing.SwingConstants;
 import javax.swing.JButton;
 import java.awt.Color;
 import javax.swing.JList;
+import javax.swing.JOptionPane;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -54,6 +56,7 @@ public class GUI extends JFrame {
 		JButton btnMango = new JButton("Mango");
 		btnMango.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				String c = JOptionPane.showInputDialog("¿Cuántos Mangos quiere?");
 			}
 		});
 		btnMango.setBackground(new Color(255, 255, 128));
