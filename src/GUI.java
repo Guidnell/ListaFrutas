@@ -59,7 +59,11 @@ public class GUI extends JFrame {
 				String c = JOptionPane.showInputDialog("¿Cuántos Mangos quiere?");
 				
 				try{
-					
+					if(!c.isEmpty()){
+						
+					}else {
+						
+					}
 				}catch (NumberFormatException a){
 					JOptionPane.showMessageDialog(null, "Solo puede ingresar números.", "Error", JOptionPane.WARNING_MESSAGE);
 				}
