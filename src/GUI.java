@@ -76,6 +76,7 @@ public class GUI extends JFrame {
 						JOptionPane.showMessageDialog(null, "Tiene que ingresar una cantidad.", "Error", JOptionPane.WARNING_MESSAGE);
 						return;
 					}
+					fruta f = cola.remove();
 				}catch (NumberFormatException a){
 					JOptionPane.showMessageDialog(null, "Solo puede ingresar números.", "Error", JOptionPane.WARNING_MESSAGE);
 				}
