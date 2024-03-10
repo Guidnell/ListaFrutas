@@ -96,6 +96,23 @@ public class GUI extends JFrame {
 		JButton btnSandia = new JButton("Sandia");
 		btnSandia.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				String c = JOptionPane.showInputDialog("¿Cuántas Sandias quiere?");
+				
+				try{
+					if(!c.isEmpty()){
+						int canti = Integer.parseInt(c);
+						cola.add(new fruta(canti, "pz. ", "Sandias"));
+					}else {
+						JOptionPane.showMessageDialog(null, "Tiene que ingresar una cantidad.", "Error", JOptionPane.WARNING_MESSAGE);
+						return;
+					}
+					fruta f = cola.remove();
+					ListaF.addElement(f);
+					Lista.setModel(ListaF);
+					JOptionPane.showMessageDialog(null, "Se agrego a la lista :)");
+				}catch (NumberFormatException a){
+					JOptionPane.showMessageDialog(null, "Solo puede ingresar números.", "Error", JOptionPane.WARNING_MESSAGE);
+				}
 			}
 		});
 		btnSandia.setBackground(Color.RED);
