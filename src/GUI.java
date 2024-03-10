@@ -149,6 +149,23 @@ public class GUI extends JFrame {
 		JButton btnUva = new JButton("Uva");
 		btnUva.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				String c = JOptionPane.showInputDialog("¿Cuántas Uvas quiere? 1 pieza = 1 racimo");
+				
+				try{
+					if(!c.isEmpty()){
+						int canti = Integer.parseInt(c);
+						cola.add(new fruta(canti, "pz. ", "Uvas"));
+					}else {
+						JOptionPane.showMessageDialog(null, "Tiene que ingresar una cantidad.", "Error", JOptionPane.WARNING_MESSAGE);
+						return;
+					}
+					fruta f = cola.remove();
+					ListaF.addElement(f);
+					Lista.setModel(ListaF);
+					JOptionPane.showMessageDialog(null, "Se agrego a la lista :)");
+				}catch (NumberFormatException a){
+					JOptionPane.showMessageDialog(null, "Solo puede ingresar números.", "Error", JOptionPane.WARNING_MESSAGE);
+				}
 			}
 		});
 		btnUva.setForeground(Color.WHITE);
