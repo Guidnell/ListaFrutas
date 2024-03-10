@@ -73,7 +73,8 @@ public class GUI extends JFrame {
 						int canti = Integer.parseInt(c);
 						cola.add(new fruta(canti, "pz. ", "Mangos"));
 					}else {
-						
+						JOptionPane.showMessageDialog(null, "Tiene que ingresar una cantidad.", "Error", JOptionPane.WARNING_MESSAGE);
+						return;
 					}
 				}catch (NumberFormatException a){
 					JOptionPane.showMessageDialog(null, "Solo puede ingresar números.", "Error", JOptionPane.WARNING_MESSAGE);
