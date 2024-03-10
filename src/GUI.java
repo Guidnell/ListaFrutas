@@ -21,6 +21,7 @@ public class GUI extends JFrame {
 	private JPanel contentPane;
 
 	private static DefaultListModel<fruta> ListaF = new DefaultListModel<>();
+	private static JList<fruta> Lista = new JList<>(ListaF);
 	
 	/**
 	 * Launch the application.
