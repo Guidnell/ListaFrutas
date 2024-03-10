@@ -6,6 +6,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.SwingConstants;
+import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import java.awt.Color;
 import javax.swing.JList;
@@ -19,6 +20,8 @@ public class GUI extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 
+	private static DefaultListModel<fruta> ListaF = new DefaultListModel<>();
+	
 	/**
 	 * Launch the application.
 	 */
