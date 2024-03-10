@@ -247,11 +247,17 @@ public class GUI extends JFrame {
 				Object selectedFruta = Lista.getSelectedValue();
                 if (selectedFruta == null) {
                     JOptionPane.showMessageDialog(null, "No ha seleccionado ninguna fruta.", "Error", 1);
-                } else {             
+                } else { 
+                	JOptionPane.showMessageDialog(null, "Se ha comprado la fruta :)", "Atención", 1);
                     ListaFCmodel.addElement(selectedFruta.toString());
                     ListaFC.setModel(ListaFCmodel);
-                }
-			}
+                    
+                    if (ListaF.getSize()!=0) {
+                    	ListaF.removeElement(selectedFruta);
+    				}
+    				Lista.setModel(ListaF);
+    				} 
+               }
 		});
 		btnComprado.setToolTipText("Seleccione el elemento y le da click.");
 		btnComprado.setForeground(new Color(0, 128, 0));
@@ -265,10 +271,15 @@ public class GUI extends JFrame {
 				Object selectedFruta = Lista.getSelectedValue();               
                 if (selectedFruta == null) {
                     JOptionPane.showMessageDialog(null, "No ha seleccionado ninguna fruta.", "Error", 1);
-                } else {                   
+                } else {
+                	JOptionPane.showMessageDialog(null, "Se ha agregado a la lista de pendientes :)", "Atención", 1);
                     ListaFPmodel.addElement(selectedFruta.toString());
-                    ListaFP.setModel(ListaFPmodel);                
-                }
+                    ListaFP.setModel(ListaFPmodel); 
+                    if (ListaF.getSize()!=0) {
+                    	ListaF.removeElement(selectedFruta);
+    				}
+    				Lista.setModel(ListaF);
+    			} 
 			}
 		});
 		btnPendiente.setToolTipText("Seleccione el elemento y le da click.");
@@ -318,7 +329,19 @@ public class GUI extends JFrame {
 		JButton btnComprado1 = new JButton("Comprado");
 		btnComprado1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {				
-				/// De rene 
+				Object selectedFruta = ListaFP.getSelectedValue();
+                if (selectedFruta == null) {
+                    JOptionPane.showMessageDialog(null, "No ha seleccionado ninguna fruta.", "Error", 1);
+                } else {
+                	JOptionPane.showMessageDialog(null, "Se ha comprado la fruta :)", "Atención ", 1);
+                    ListaFCmodel.addElement(selectedFruta.toString());
+                    ListaFC.setModel(ListaFCmodel);
+                    
+                    if (ListaFPmodel.getSize()!=0) {
+                    	ListaFPmodel.removeElement(selectedFruta);
+    				}
+    				ListaFP.setModel(ListaFPmodel);
+    				} 
 			}
 		});
 		btnComprado1.setToolTipText("Seleccione el elemento y le da click.");
