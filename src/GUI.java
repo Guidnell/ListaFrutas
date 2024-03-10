@@ -14,6 +14,8 @@ import javax.swing.JOptionPane;
 
 import java.awt.event.ActionListener;
 import java.util.Comparator;
+import java.util.PriorityQueue;
+import java.util.Queue;
 import java.awt.event.ActionEvent;
 
 public class GUI extends JFrame {
@@ -24,6 +26,7 @@ public class GUI extends JFrame {
 	private static DefaultListModel<fruta> ListaF = new DefaultListModel<>();
 	private static JList<fruta> Lista = new JList<>(ListaF);
 	Comparator<fruta> comparador = Comparator.comparingInt(fruta::getCantidad);
+	Queue<fruta> cola = new PriorityQueue<>(comparador);
 	
 	/**
 	 * Launch the application.
