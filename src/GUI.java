@@ -71,7 +71,7 @@ public class GUI extends JFrame {
 				try{
 					if(!c.isEmpty()){
 						int canti = Integer.parseInt(c);
-						
+						cola.add(new fruta(canti, "pz. ", "Mangos"));
 					}else {
 						
 					}
