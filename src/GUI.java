@@ -70,6 +70,7 @@ public class GUI extends JFrame {
 				
 				try{
 					if(!c.isEmpty()){
+						int canti = Integer.parseInt(c);
 						
 					}else {
 						
