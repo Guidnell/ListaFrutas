@@ -78,6 +78,7 @@ public class GUI extends JFrame {
 					}
 					fruta f = cola.remove();
 					ListaF.addElement(f);
+					Lista.setModel(ListaF);
 				}catch (NumberFormatException a){
 					JOptionPane.showMessageDialog(null, "Solo puede ingresar números.", "Error", JOptionPane.WARNING_MESSAGE);
 				}
