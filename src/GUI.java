@@ -13,6 +13,7 @@ import javax.swing.JList;
 import javax.swing.JOptionPane;
 
 import java.awt.event.ActionListener;
+import java.util.Comparator;
 import java.awt.event.ActionEvent;
 
 public class GUI extends JFrame {
@@ -22,6 +23,7 @@ public class GUI extends JFrame {
 
 	private static DefaultListModel<fruta> ListaF = new DefaultListModel<>();
 	private static JList<fruta> Lista = new JList<>(ListaF);
+	Comparator<fruta> comparador = Comparator.comparingInt(fruta::getCantidad);
 	
 	/**
 	 * Launch the application.
