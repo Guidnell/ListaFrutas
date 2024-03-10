@@ -23,6 +23,13 @@ public class GUI extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 
+	
+	private DefaultListModel<String> ListaFCmodel = new DefaultListModel<>();
+    private JList<String> ListaFC = new JList<>(ListaFCmodel);
+    
+    private DefaultListModel<String> ListaFPmodel = new DefaultListModel<>();
+    private JList<String> ListaFP = new JList<>(ListaFCmodel);
+	
 	private static DefaultListModel<fruta> ListaF = new DefaultListModel<>();
 	private static JList<fruta> Lista = new JList<>(ListaF);
 	Comparator<fruta> comparador = Comparator.comparingInt(fruta::getCantidad);
@@ -225,9 +232,25 @@ public class GUI extends JFrame {
 		btnFresa.setBounds(10, 342, 89, 48);
 		contentPane.add(btnFresa);
 		
+		JList ListaFC = new JList();
+		ListaFC.setBounds(348, 77, 208, 284);
+		contentPane.add(ListaFC);
+		
+		JList ListaFP = new JList();
+		ListaFP.setBounds(566, 77, 208, 284);
+		contentPane.add(ListaFP);
+		
 		JButton btnComprado = new JButton("Comprado");
 		btnComprado.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
+				Object selectedFruta = Lista.getSelectedValue();
+                if (selectedFruta == null) {
+                    JOptionPane.showMessageDialog(null, "No ha seleccionado ninguna fruta.", "Error", 1);
+                } else {             
+                    ListaFCmodel.addElement(selectedFruta.toString());
+                    ListaFC.setModel(ListaFCmodel);
+                }
 			}
 		});
 		btnComprado.setToolTipText("Seleccione el elemento y le da click.");
@@ -238,7 +261,14 @@ public class GUI extends JFrame {
 		
 		JButton btnPendiente = new JButton("Pendiente");
 		btnPendiente.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+			public void actionPerformed(ActionEvent e) {				
+				Object selectedFruta = Lista.getSelectedValue();               
+                if (selectedFruta == null) {
+                    JOptionPane.showMessageDialog(null, "No ha seleccionado ninguna fruta.", "Error", 1);
+                } else {                   
+                    ListaFPmodel.addElement(selectedFruta.toString());
+                    ListaFP.setModel(ListaFPmodel);                
+                }
 			}
 		});
 		btnPendiente.setToolTipText("Seleccione el elemento y le da click.");
@@ -246,11 +276,7 @@ public class GUI extends JFrame {
 		btnPendiente.setBackground(new Color(255, 255, 128));
 		btnPendiente.setBounds(230, 342, 95, 23);
 		contentPane.add(btnPendiente);
-		
-		JList ListaFC = new JList();
-		ListaFC.setBounds(348, 77, 208, 284);
-		contentPane.add(ListaFC);
-		
+				
 		JButton btnEliminarL = new JButton("Eliminar Lista");
 		btnEliminarL.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -288,13 +314,11 @@ public class GUI extends JFrame {
 		lblFrutasP.setBounds(578, 47, 183, 40);
 		contentPane.add(lblFrutasP);
 		
-		JList ListaFP = new JList();
-		ListaFP.setBounds(566, 77, 208, 284);
-		contentPane.add(ListaFP);
 		
 		JButton btnComprado1 = new JButton("Comprado");
 		btnComprado1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+			public void actionPerformed(ActionEvent e) {				
+				/// De rene 
 			}
 		});
 		btnComprado1.setToolTipText("Seleccione el elemento y le da click.");
