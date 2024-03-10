@@ -63,6 +63,10 @@ public class GUI extends JFrame {
 		lblTitulo.setBounds(292, 11, 195, 36);
 		contentPane.add(lblTitulo);
 		
+		JList Lista = new JList();
+		Lista.setBounds(117, 47, 208, 284);
+		contentPane.add(Lista);
+		
 		JButton btnMango = new JButton("Mango");
 		btnMango.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -79,6 +83,7 @@ public class GUI extends JFrame {
 					fruta f = cola.remove();
 					ListaF.addElement(f);
 					Lista.setModel(ListaF);
+					JOptionPane.showMessageDialog(null, "Se agrego a la lista :)");
 				}catch (NumberFormatException a){
 					JOptionPane.showMessageDialog(null, "Solo puede ingresar números.", "Error", JOptionPane.WARNING_MESSAGE);
 				}
@@ -156,10 +161,6 @@ public class GUI extends JFrame {
 		btnPendiente.setBackground(new Color(255, 255, 128));
 		btnPendiente.setBounds(230, 342, 95, 23);
 		contentPane.add(btnPendiente);
-		
-		JList Lista = new JList();
-		Lista.setBounds(117, 47, 208, 284);
-		contentPane.add(Lista);
 		
 		JList ListaFC = new JList();
 		ListaFC.setBounds(348, 77, 208, 284);
