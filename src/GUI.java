@@ -27,6 +27,7 @@ public class GUI extends JFrame {
 	private static JList<fruta> Lista = new JList<>(ListaF);
 	Comparator<fruta> comparador = Comparator.comparingInt(fruta::getCantidad);
 	Queue<fruta> cola = new PriorityQueue<>(comparador);
+	int i;
 	
 	/**
 	 * Launch the application.
