@@ -17,5 +17,8 @@ public int getCantidad() {
 public String getUnidad() {
 	return unidad;
 }
-
+@Override
+public String toString(){
+	return cantidad + unidad + fruta;
+}
 }
