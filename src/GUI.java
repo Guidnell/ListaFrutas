@@ -71,7 +71,7 @@ public class GUI extends JFrame {
 		contentPane.add(lblTitulo);
 		
 		JList Lista = new JList();
-		Lista.setBounds(117, 47, 208, 284);
+		Lista.setBounds(117, 77, 208, 254);
 		contentPane.add(Lista);
 		
 		JButton btnMango = new JButton("Mango");
@@ -233,14 +233,14 @@ public class GUI extends JFrame {
 		contentPane.add(btnFresa);
 		
 		JList ListaFC = new JList();
-		ListaFC.setBounds(348, 77, 208, 284);
+		ListaFC.setBounds(335, 77, 221, 284);
 		contentPane.add(ListaFC);
 		
 		JList ListaFP = new JList();
 		ListaFP.setBounds(566, 77, 208, 284);
 		contentPane.add(ListaFP);
 		
-		JButton btnComprado = new JButton("Comprado");
+		JButton btnComprado = new JButton("Comprar");
 		btnComprado.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -262,10 +262,10 @@ public class GUI extends JFrame {
 		btnComprado.setToolTipText("Seleccione el elemento y le da click.");
 		btnComprado.setForeground(new Color(0, 128, 0));
 		btnComprado.setBackground(new Color(128, 255, 128));
-		btnComprado.setBounds(117, 342, 103, 23);
+		btnComprado.setBounds(167, 342, 103, 23);
 		contentPane.add(btnComprado);
 		
-		JButton btnPendiente = new JButton("Pendiente");
+		JButton btnPendiente = new JButton("Agregar a Pendientes");
 		btnPendiente.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {				
 				Object selectedFruta = Lista.getSelectedValue();               
@@ -285,31 +285,34 @@ public class GUI extends JFrame {
 		btnPendiente.setToolTipText("Seleccione el elemento y le da click.");
 		btnPendiente.setForeground(new Color(128, 0, 0));
 		btnPendiente.setBackground(new Color(255, 255, 128));
-		btnPendiente.setBounds(230, 342, 95, 23);
+		btnPendiente.setBounds(141, 376, 167, 23);
 		contentPane.add(btnPendiente);
 				
 		JButton btnEliminarL = new JButton("Eliminar Lista");
 		btnEliminarL.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
 				// Borra todos los elementos de la lista de frutas compradas
 				ListaFCmodel.clear();
+				JOptionPane.showMessageDialog(null, "Ha eliminado la lista de Frutas Compradas");
 			}
 		});
 		btnEliminarL.setToolTipText("Dejara la lista en blanco.");
 		btnEliminarL.setForeground(Color.RED);
 		btnEliminarL.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		btnEliminarL.setBackground(new Color(255, 128, 128));
-		btnEliminarL.setBounds(348, 378, 103, 23);
+		btnEliminarL.setBounds(453, 376, 103, 23);
 		contentPane.add(btnEliminarL);
 		
-		JButton btnEliminarE = new JButton("Eliminar");
+		JButton btnEliminarE = new JButton("Eliminar Fruta");
 		btnEliminarE.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
               // Este Boton sirve para eliminar lo seleccionado en la lista, uno por uno
 				
 			int selectedIndex = ListaFC.getSelectedIndex(); 
 		    if (selectedIndex != -1) {
-		         ListaFCmodel.removeElementAt(selectedIndex); 
+		         ListaFCmodel.removeElementAt(selectedIndex);
+		         JOptionPane.showMessageDialog(null, "Ha eliminado una fruta ");
 		    }else {
 		         JOptionPane.showMessageDialog(null, "No ha seleccionado ninguna fruta.");
 		        }
@@ -318,14 +321,14 @@ public class GUI extends JFrame {
 		btnEliminarE.setToolTipText("Seleccione el elemento y le da click.");
 		btnEliminarE.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		btnEliminarE.setBackground(new Color(255, 128, 128));
-		btnEliminarE.setBounds(461, 378, 95, 23);
+		btnEliminarE.setBounds(335, 376, 108, 23);
 		contentPane.add(btnEliminarE);
 		
 		JLabel lblFrutasC = new JLabel("Frutas compradas");
 		lblFrutasC.setHorizontalAlignment(SwingConstants.CENTER);
 		lblFrutasC.setForeground(new Color(0, 128, 0));
 		lblFrutasC.setFont(new Font("Yu Gothic", Font.ITALIC, 18));
-		lblFrutasC.setBounds(359, 47, 183, 40);
+		lblFrutasC.setBounds(348, 47, 183, 40);
 		contentPane.add(lblFrutasC);
 		
 		JLabel lblFrutasP = new JLabel("Frutas pendientes");
@@ -336,7 +339,7 @@ public class GUI extends JFrame {
 		contentPane.add(lblFrutasP);
 		
 		
-		JButton btnComprado1 = new JButton("Comprado");
+		JButton btnComprado1 = new JButton("Comprar");
 		btnComprado1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {				
 				Object selectedFruta = ListaFP.getSelectedValue();
@@ -357,7 +360,28 @@ public class GUI extends JFrame {
 		btnComprado1.setToolTipText("Seleccione el elemento y le da click.");
 		btnComprado1.setForeground(new Color(0, 128, 0));
 		btnComprado1.setBackground(new Color(128, 255, 128));
-		btnComprado1.setBounds(618, 376, 109, 23);
+		btnComprado1.setBounds(566, 376, 89, 23);
 		contentPane.add(btnComprado1);
+		
+		JButton btnEliminarE_1 = new JButton("Eliminar Fruta");
+		btnEliminarE_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				//Boton para eliminar las frutas seleccionadas de la lista de pendientes
+				int selectedIndex = ListaFP.getSelectedIndex(); 
+			    if (selectedIndex != -1) {
+			         ListaFPmodel.removeElementAt(selectedIndex);
+			         JOptionPane.showMessageDialog(null, "Ha eliminado una fruta de los pendientes.");
+			    }else {
+			         JOptionPane.showMessageDialog(null, "No ha seleccionado ninguna fruta.");
+			        }
+				
+			}
+		});
+		btnEliminarE_1.setToolTipText("Seleccione el elemento y le da click.");
+		btnEliminarE_1.setFont(new Font("Tahoma", Font.PLAIN, 10));
+		btnEliminarE_1.setBackground(new Color(255, 128, 128));
+		btnEliminarE_1.setBounds(665, 376, 111, 23);
+		contentPane.add(btnEliminarE_1);
 	}
 }
