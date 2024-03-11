@@ -291,6 +291,8 @@ public class GUI extends JFrame {
 		JButton btnEliminarL = new JButton("Eliminar Lista");
 		btnEliminarL.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				// Borra todos los elementos de la lista de frutas compradas
+				ListaFCmodel.clear();
 			}
 		});
 		btnEliminarL.setToolTipText("Dejara la lista en blanco.");
@@ -303,6 +305,14 @@ public class GUI extends JFrame {
 		JButton btnEliminarE = new JButton("Eliminar");
 		btnEliminarE.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+              // Este Boton sirve para eliminar lo seleccionado en la lista, uno por uno
+				
+			int selectedIndex = ListaFC.getSelectedIndex(); 
+		    if (selectedIndex != -1) {
+		         ListaFCmodel.removeElementAt(selectedIndex); 
+		    }else {
+		         JOptionPane.showMessageDialog(null, "No ha seleccionado ninguna fruta.");
+		        }
 			}
 		});
 		btnEliminarE.setToolTipText("Seleccione el elemento y le da click.");
